@@ -1,0 +1,8 @@
+Libro [Titolo = dasd
+3
+Autore = rwrw
+Editore = dass]
+Libro [Titolo = asds
+2
+Autore = hhjjh
+Editore = sdd]
