@@ -51,37 +51,37 @@ public class Main {
 		
 		System.out.println(Arrays.asList(libri));
 		
-		FileWriter myWriter = null;
+		FileWriter scritta = null;
 		
 		try {
 			
-			myWriter = new FileWriter(mioFile);
+			scritta = new FileWriter(mioFile);
 			
 			for (int x=0;x<libri.length;x++) {
 				
 				Libro u = libri[x];
 				
-				myWriter.write("Libro [Titolo = " + u.getTitolo() + "\n" + "Numero Pagine = " + u.getNumeroPagine() + "\n" + "Autore = " + u.getAutore() + "\n" + "Editore = " + u.getEditore() + "]\n");
+				scritta.write("Libro [Titolo = " + u.getTitolo() + "\n" + "Numero Pagine = " + u.getNumeroPagine() + "\n" + "Autore = " + u.getAutore() + "\n" + "Editore = " + u.getEditore() + "]\n");
 			}
 		} catch (IOException e) {
 			
 			System.out.println("Error writing file: " + e.getMessage());
 		} finally {
 			
-			if (myWriter != null)
+			if (scritta != null)
 				try {
-					myWriter.close();
+					scritta.close();
 				} catch (IOException e) { }
 		}	
 		
 		
-		Scanner reader = null;
+		Scanner lettura = null;
 		try {
 			
-			reader = new Scanner(mioFile);
+			lettura = new Scanner(mioFile);
 			
-			while (reader.hasNextLine()) {
-			   String data = reader.nextLine();
+			while (lettura.hasNextLine()) {
+			   String data = lettura.nextLine();
 			   
 			}
 		} catch (FileNotFoundException e) {
@@ -89,8 +89,8 @@ public class Main {
 			System.out.println("Error reading file: " + e.getMessage());
 		} finally {
 			
-			if (reader != null)
-				reader.close();
+			if (lettura != null)
+				lettura.close();
 		}
 	}
 
